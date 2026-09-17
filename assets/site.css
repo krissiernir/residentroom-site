@@ -1,0 +1,129 @@
+/* Resident Room | brand palette from the brand book (pp.12–13) */
+:root {
+  --carbon: #1e1e1e;
+  --green: #396247;
+  --mist: #61c6dd;
+  --white: #ffffff;
+  --wine: #982a3d;
+  --quiet: rgba(255, 255, 255, 0.74);
+  --line: rgba(255, 255, 255, 0.18);
+  --gutter: clamp(16px, 5vw, 64px);
+  --max: 1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--carbon);
+  color: var(--white);
+  font: 400 1.0625rem/1.6 "Manrope", system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--mist); outline-offset: 4px; }
+.sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.wrap { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; }
+
+/* Headlines: Bicyclette outlines, one inline SVG per word, so lines wrap naturally.
+   Height is set so the cap height equals 0.6em of the heading's font-size. */
+.display {
+  margin: 0;
+  font-size: clamp(2.1rem, 7.2vw, 4.4rem);
+  line-height: 0;
+  display: flex; flex-wrap: wrap;
+  column-gap: 0.3em; row-gap: 0.12em;
+}
+.display .hw { height: 0.82em; width: auto; fill: currentColor; overflow: visible; }
+.display--en { font-size: clamp(0.95rem, 2.4vw, 1.25rem); color: var(--mist); margin-top: 1.1rem; column-gap: 0.32em; }
+.display--xl { font-size: clamp(3.2rem, 15vw, 8.5rem); }
+
+.lede { max-width: 34ch; margin: 1.6rem 0 0; font-size: clamp(1.05rem, 2.2vw, 1.25rem); line-height: 1.5; }
+.en { color: var(--quiet); }
+p.en { margin-top: 0.35rem; }
+
+/* Hero: the room seen through the keyhole */
+.hero { min-height: 100svh; display: grid; grid-template-rows: auto 1fr; }
+.bar { display: flex; align-items: center; justify-content: space-between; padding-block: 22px; }
+.bar img { width: 92px; }
+.bar a { font-size: 0.95rem; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.hero__grid {
+  display: grid; gap: clamp(28px, 5vw, 72px); align-items: center;
+  padding-block: 8px clamp(48px, 8vw, 96px);
+}
+.keyhole {
+  justify-self: center;
+  height: min(48svh, 420px);
+  aspect-ratio: 90 / 190;
+  -webkit-mask: url("keyhole.svg") center / contain no-repeat;
+          mask: url("keyhole.svg") center / contain no-repeat;
+  background: #2a2a2a;
+  overflow: hidden;
+}
+.keyhole img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; }
+@media (prefers-reduced-motion: no-preference) {
+  .keyhole { animation: open 1.6s cubic-bezier(.2, .7, .1, 1) both; }
+  .keyhole img { animation: settle 2.4s cubic-bezier(.2, .7, .1, 1) both; }
+  @keyframes open { from { transform: scale(.82); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes settle { from { transform: scale(1.18); } to { transform: none; } }
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 2rem; }
+.btn {
+  display: inline-grid; gap: 1px; text-decoration: none;
+  padding: 13px 22px 12px; min-width: 11.5rem;
+  border: 1px solid var(--white); border-radius: 999px;
+  font-weight: 600; line-height: 1.25;
+}
+.btn small { font-weight: 400; font-size: 0.8rem; opacity: 0.8; }
+.btn--solid { background: var(--white); color: var(--carbon); }
+.btn--solid:hover { background: var(--mist); border-color: var(--mist); }
+.btn--line:hover { border-color: var(--mist); color: var(--mist); }
+
+@media (min-width: 860px) {
+  .hero__grid { grid-template-columns: 1.15fr 0.85fr; }
+  .keyhole { order: 2; width: auto; height: min(74svh, 640px); }
+}
+
+/* Hours */
+.hours { background: var(--green); padding-block: clamp(64px, 10vw, 128px); }
+.hours__grid { display: grid; gap: 40px; }
+.hours__facts { display: grid; gap: 1.6rem; align-content: end; }
+.hours__facts p { margin: 0; }
+.fact strong { display: block; font-weight: 600; }
+@media (min-width: 860px) { .hours__grid { grid-template-columns: 1.3fr 0.7fr; align-items: end; } }
+
+/* Private hire */
+.hire { padding-block: clamp(64px, 10vw, 128px); }
+.hire__grid { display: grid; gap: clamp(32px, 5vw, 64px); align-items: center; }
+.hire__photo { border-radius: 2px; }
+.hire p { max-width: 42ch; }
+@media (min-width: 860px) { .hire__grid { grid-template-columns: 1fr 1fr; } }
+
+/* Gift cards */
+.gift { border-top: 1px solid var(--line); padding-block: clamp(56px, 8vw, 96px); }
+.gift__grid { display: grid; gap: 24px; align-items: end; }
+.gift .display { font-size: clamp(1.8rem, 5vw, 3rem); }
+@media (min-width: 860px) { .gift__grid { grid-template-columns: 1fr auto; } }
+
+/* Footer */
+.foot { background: #151515; padding-block: 48px 64px; font-size: 0.95rem; color: var(--quiet); }
+.foot__grid { display: grid; gap: 28px; }
+.foot img { width: 44px; }
+.foot p { margin: 0; }
+.foot a { color: var(--white); text-underline-offset: 3px; }
+@media (min-width: 860px) { .foot__grid { grid-template-columns: auto 1fr 1fr 1fr; align-items: start; } }
+
+/* Privacy page */
+.doc { padding-block: 24px 96px; }
+.doc .display { font-size: clamp(2rem, 6vw, 3.6rem); margin-bottom: 2rem; }
+.doc h2 { font-size: 1.15rem; margin: 2.4rem 0 0.4rem; }
+.doc h3 { font-size: 1rem; margin: 1.6rem 0 0.2rem; color: var(--mist); font-weight: 600; }
+.doc p, .doc li { max-width: 68ch; }
+.doc section + section { border-top: 1px solid var(--line); margin-top: 3.5rem; padding-top: 1rem; }
+
+.gift__grid .btn { justify-self: start; }

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resident Room | Kokteilbar á Hverfisgötu 26, Reykjavík</title>
+<meta name="description" content="Kokteilar, valin vín og ógleymanleg kvöld. Opið miðvikudaga til sunnudaga frá 16:00, happy hour 16–19. Cocktail bar at Hverfisgata 26, Reykjavík.">
+<meta name="theme-color" content="#1e1e1e">
+<link rel="icon" href="assets/keyhole.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Resident Room | Hverfisgata 26, Reykjavík">
+<meta property="og:description" content="Kokteilar, valin vín og ógleymanleg kvöld. Cocktails, curated wines and unforgettable evenings.">
+<meta property="og:image" content="https://krissiernir.github.io/residentroom-site/assets/og.jpg">
+<meta property="og:locale" content="is_IS">
+<meta property="og:locale:alternate" content="en_GB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BarOrPub","name":"Resident Room","servesCuisine":"Cocktails","address":{"@type":"PostalAddress","streetAddress":"Hverfisgata 26","postalCode":"101","addressLocality":"Reykjavík","addressCountry":"IS"},"geo":{"@type":"GeoCoordinates","latitude":64.14653,"longitude":-21.93032},"email":"marketing@residentroom.is","sameAs":["https://www.instagram.com/residentroomrvk/","https://www.dineout.is/residentroom"],"acceptsReservations":"https://www.dineout.is/residentroom"}
+</script>
+</head>
+<body>
+
+<header class="hero wrap">
+  <div class="bar">
+    <img src="assets/logo-white.svg" alt="Resident Room" width="92" height="68">
+    <a href="https://www.instagram.com/residentroomrvk/">Instagram</a>
+  </div>
+  <div class="hero__grid">
+    <div class="keyhole"><img src="assets/keyhole-bar.jpg" alt="Barinn í Resident Room séður í gegnum skráargat" width="1000" height="1613" fetchpriority="high"></div>
+    <div>
+      {{H1}}
+      {{H1_EN}}
+      <p class="lede">Kokteilar, valin vín og ógleymanleg kvöld. Notalegur bar í hjarta Reykjavíkur.</p>
+      <p class="en">Cocktails, curated wines and unforgettable evenings. An intimate bar in the heart of Reykjavík.</p>
+      <div class="actions">
+        <a class="btn btn--solid" href="https://www.dineout.is/residentroom">Bóka borð <small lang="en">Book a table</small></a>
+        <a class="btn btn--line" href="{{MAPS}}">Rata til okkar <small lang="en">Directions</small></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hours" aria-labelledby="hours-title">
+    <div class="wrap hours__grid">
+      <div>
+        <h2 class="sr" id="hours-title">Opnunartími</h2>
+        {{DAYS}}
+        {{TIME}}
+      </div>
+      <div class="hours__facts">
+        <p class="fact"><strong>Happy hour</strong>Kl. 16:00–19:00 alla opnunardaga.<span class="en" lang="en"><br>4 to 7 pm, every day we are open.</span></p>
+        <p class="fact"><strong>Hverfisgata 26</strong>101 Reykjavík<br><a href="{{MAPS}}">Opna leiðarlýsingu</a> <span class="en" lang="en">/ <a href="{{MAPS}}">Get directions</a></span></p>
+        <p class="en" lang="en">Open Wednesday to Sunday from 4 pm.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hire wrap" id="einkasamkvaemi" aria-label="Einkasamkvæmi / Private hire">
+    <div class="hire__grid">
+      <picture>
+        <source media="(min-width: 860px)" srcset="assets/lounge-1800.jpg">
+        <img class="hire__photo" src="assets/lounge-900.jpg" alt="Setustofan við gluggann í Resident Room" width="900" height="601" loading="lazy">
+      </picture>
+      <div>
+        {{HIRE}}
+        {{HIRE_EN}}
+        <p class="lede">Jólaboð, kvöld með viðskiptavinum eða eftirpartí. Allt herbergið getur verið ykkar fyrir allt að 50 gesti.</p>
+        <p class="en" lang="en">A Christmas party, a client evening or the after-party. The whole room can be yours for up to 50 guests.</p>
+        <p>Sendið okkur dagsetningu og fjölda gesta og við sendum ykkur tillögur.</p>
+        <p class="en" lang="en">Send us a date and a head count, and we will send you options.</p>
+        <div class="actions">
+          <a class="btn btn--solid" href="{{HIRE_MAIL}}">Senda fyrirspurn <small lang="en">Send an enquiry</small></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gift" aria-label="Gjafabréf / Gift cards">
+    <div class="wrap gift__grid">
+      <div>
+        {{GIFT}}
+        <p class="lede">Dineout gjafabréf gilda hjá okkur.</p>
+        <p class="en" lang="en">Dineout gift cards are welcome here.</p>
+      </div>
+      <a class="btn btn--line" href="https://gjafabref.dineout.is/is">Kaupa gjafabréf <small lang="en">Buy a gift card</small></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <img src="assets/icon-white.svg" alt="" width="44" height="44">
+    <p>Resident Room<br>Hverfisgata 26<br>101 Reykjavík</p>
+    <p>Opið mið–sun frá 16:00<br><span lang="en">Open Wed–Sun from 4 pm</span></p>
+    <p><a href="https://www.instagram.com/residentroomrvk/">@residentroomrvk</a><br><a href="mailto:marketing@residentroom.is">marketing@residentroom.is</a><br><a href="privacy/">Persónuvernd / Privacy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
