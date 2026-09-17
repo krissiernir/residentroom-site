@@ -22,7 +22,7 @@ def heading(key, label, tag='h2', cls=''):
 
 MAIL_BODY = ('Dagsetning / Date:%0D%0AFjöldi gesta / Guests:%0D%0ATilefni / Occasion:'
              '%0D%0ANafn og fyrirtæki / Name and company:%0D%0A')
-HIRE_MAIL = f'mailto:marketing@residentroom.is?subject=Einkasamkv%C3%A6mi%20%2F%20Private%20hire&body={MAIL_BODY}'
+HIRE_MAIL = f'mailto:info@residentroom.is?subject=Einkasamkv%C3%A6mi%20%2F%20Private%20hire&body={MAIL_BODY}'
 MAPS = ('https://www.google.com/maps/dir/?api=1&destination=Hverfisgata%2026%2C%20101%20Reykjav%C3%ADk'
         '&travelmode=walking')
 
